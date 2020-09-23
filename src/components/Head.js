@@ -18,7 +18,7 @@ const Head = () => {
 
             <Link to="/products" style={{textDecoration:"none"}}>
                 <span className="navlink">
-                    <FaBookReader style={{verticalAlign: "bottom", marginRight:"3px"}}/>Kitaplar
+                    <FaBookReader style={{verticalAlign: "bottom", marginRight:"3px"}}/>taplar
                 </span>
             </Link>
 

@@ -15,9 +15,6 @@ export const numbersInBasket = (cont) =>{
 
 const BasketButton = () => {
     const cont = useContext(BookContext);
-    const tooltip = () => {
-        return ``
-    }
     return (
         <>
          {/* Sepete sepetteki ürün sayısını gösteren tooltip eklendi */}

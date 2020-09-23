@@ -24,3 +24,5 @@ yarn-error.log*
 
 node_modules/
 public/img/
+src/main.scss
+src/App.css.map

@@ -1,13 +1,18 @@
 import React, { useReducer } from 'react';
 import { Switch, Route} from "react-router-dom";
 
-import Head from "./components/Head";
-import Cart from "./components/Cart";
-import Products from "./components/Products";
-import Details from "./components/Details";
-import Default from "./components/Default";
-import {reducer} from "./components/Reducer";
-import {booksCopy} from "./components/Reducer";
+import {
+    Head,
+    Cart,
+    Products,
+    Details,
+    Default
+} from "./components/";
+
+
+import {reducer,
+        booksCopy} from "./components/Reducer";
+
 
 import './App.css';
 

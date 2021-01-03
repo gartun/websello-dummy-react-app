@@ -6,7 +6,7 @@ import {FaPlusCircle, FaMinusCircle} from "react-icons/fa";
 
   
 
-const BookInBasket = ({ img, title, author, id,rating, info, price, quantity}) => {
+const BookInBasket = ({ img, title, author, id, rating, info, price, quantity}) => {
     const cont = useContext(BookContext);
     
     

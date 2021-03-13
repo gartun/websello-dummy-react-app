@@ -1,12 +1,13 @@
 import React, { useReducer } from 'react';
-import { Switch, Route} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import {
     Head,
     Cart,
     Products,
     Details,
-    Default
+    Default,
+    Footer
 } from "./components/";
 
 
@@ -20,18 +21,20 @@ export const BookContext = React.createContext();
 
 function App() {
     const [list, dispatch] = useReducer(reducer, booksCopy);
+
     return ( 
         <BookContext.Provider value={{BookList:list, ListChange:dispatch }}>
         <Head/>
         <main>
-        <Switch>
+            <Switch>
                 <Route exact path="/" component={Products} />
-                <Route exact path="/cart" component={Cart } />
-                <Route exact path="/products" component={Products } />
-                <Route exact path="/details/:id" component={Details } />
-                <Route  component={Default } />
+                <Route path="/cart" component={Cart } />
+                <Route path="/products" component={Products } />
+                <Route path="/details/:id" component={Details } />
+                <Route component={Default } />
             </Switch>
         </main>
+        <Footer />
     </BookContext.Provider>
     );
 }

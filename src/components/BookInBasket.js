@@ -1,13 +1,13 @@
 import React, {useContext} from 'react';
 import {Link} from "react-router-dom";
-import {BookContext} from "../App";
+import {BookCtx} from "../context/Context";
 import Rating from "./Rating";
 import {FaPlusCircle, FaMinusCircle} from "react-icons/fa";
 
   
 
 const BookInBasket = ({ img, title, author, id, rating, info, price, quantity}) => {
-    const cont = useContext(BookContext);
+    const cont = useContext(BookCtx);
     
     
     return ( 

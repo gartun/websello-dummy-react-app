@@ -1,10 +1,11 @@
-import React,{ useContext } from 'react';
+import { useContext } from 'react';
 import Product from "./Product";
-import {BookContext} from "../App";
+import {BookCtx} from "../context/Context";
 import SectionTitle from './SectionTitle';
 
 function Products() {
-   const cont = useContext(BookContext);
+    console.log("Products rendering")
+   const cont = useContext(BookCtx);
 
     return (
         <>
@@ -18,4 +19,4 @@ function Products() {
     )
 }
 
-export default React.memo(Products);
+export default Products;

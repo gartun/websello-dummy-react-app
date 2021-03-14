@@ -5,7 +5,7 @@ import {FaBookReader} from "react-icons/fa";
 
 
 const Head = () => {
-    
+
     return (
         <header>
             {/* Ana sayfaya yani ürünlere dönmek için logoya link eklendi. */}
@@ -28,4 +28,4 @@ const Head = () => {
     )
 }
 
-export default React.memo(Head);
+export default Head;

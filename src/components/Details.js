@@ -2,14 +2,13 @@ import React, { useContext } from 'react';
 import Rating from "./Rating";
 import {useParams} from "react-router";
 import {Link} from "react-router-dom";
-import {BookContext} from "../App";
+import {BookCtx} from "../context/Context";
  
 const Details = () => {
     const {id} = useParams();
-    const cont = useContext(BookContext);
+    const cont = useContext(BookCtx);
     
     const product = cont.BookList.find(book => book.id === +id );
-    
     
     return (
         <>

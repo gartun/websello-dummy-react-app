@@ -1,41 +1,42 @@
-import React, { useReducer } from 'react';
+import {
+    lazy,
+    Suspense
+} from 'react';
+
 import { Switch, Route } from "react-router-dom";
+
+import {Context} from "./context/Context";
 
 import {
     Head,
     Cart,
     Products,
-    Details,
     Default,
-    Footer
+    Footer,
+    Spinner
 } from "./components/";
-
-
-import {reducer,
-        booksCopy} from "./components/Reducer";
-
-
 import './App.css';
 
-export const BookContext = React.createContext();
+const Details = lazy(() => import("./components/Details"));
 
 function App() {
-    const [list, dispatch] = useReducer(reducer, booksCopy);
 
     return ( 
-        <BookContext.Provider value={{BookList:list, ListChange:dispatch }}>
-        <Head/>
-        <main>
-            <Switch>
-                <Route exact path="/" component={Products} />
-                <Route path="/cart" component={Cart } />
-                <Route path="/products" component={Products } />
-                <Route path="/details/:id" component={Details } />
-                <Route component={Default } />
-            </Switch>
-        </main>
-        <Footer />
-    </BookContext.Provider>
+        <Context>
+                <Suspense fallback={<Spinner />}>
+                <Head/>
+                <main>
+                    <Switch>
+                        <Route exact path="/" component={Products} />
+                        <Route path="/cart" component={Cart } />
+                        <Route path="/products" component={Products } />
+                        <Route path="/details/:id" component={Details } />
+                        <Route component={Default } />
+                    </Switch>
+                </main>
+                <Footer />
+                </Suspense>
+            </Context>
     );
 }
 

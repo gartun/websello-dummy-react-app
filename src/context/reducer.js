@@ -111,6 +111,7 @@ const books = [
         info: " Rastgele belki evcil hayvanlar tutulan kitap gökyüzü arş feza balıklar kanat ceviz karası sırt tekdüze teknoloji uydurma nerelerden nerelere bir kuş yüzük atabilirler yoksunluk fenalaşanlar?"
     },
 ];
+
 export const booksCopy = [...books];
 
 export const reducer = (list, action) =>{

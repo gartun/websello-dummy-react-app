@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import {BookContext} from "../App";
+import {BookCtx} from "../context/Context";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import BookInBasket from "./BookInBasket";
@@ -9,7 +9,7 @@ import SectionTitle from "./SectionTitle";
 
 
 function Cart() {
-    const cont = useContext(BookContext);
+    const cont = useContext(BookCtx);
     const [showModal, setShowModal] = useState(false);
     const [number, setNumber] = useState("");
     const [name, setName] = useState("");

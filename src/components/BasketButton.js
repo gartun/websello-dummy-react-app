@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import Tippy from '@tippyjs/react';
 import "tippy.js/dist/tippy.css";
 import {FaShoppingBasket} from "react-icons/fa";
-import {BookContext} from "../App";
+import {BookCtx} from "../context/Context";
 
 export const numbersInBasket = (cont) =>{
     let n = 0;
@@ -14,7 +14,7 @@ export const numbersInBasket = (cont) =>{
 };
 
 const BasketButton = () => {
-    const cont = useContext(BookContext);
+    const cont = useContext(BookCtx);
     return (
         <>
          {/* Sepete sepetteki ürün sayısını gösteren tooltip eklendi */}

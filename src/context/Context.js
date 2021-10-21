@@ -1,21 +1,17 @@
-import {
-	useReducer,
-	createContext
-} from "react";
+import { useReducer, createContext, useContext } from "react";
 
-import {
-	reducer,
-	booksCopy
-} from "./reducer";
+import { reducer, booksCopy } from "./reducer";
 
-export const BookCtx = createContext();
+const BookCtx = createContext();
+
+export const useBookCtx = () => useContext(BookCtx);
 
 export const Context = ({ children }) => {
-	const [list, dispatch] = useReducer(reducer, booksCopy);
+  const [list, dispatch] = useReducer(reducer, booksCopy);
 
-	return(
-		<BookCtx.Provider value={{ BookList: list, ListChange: dispatch}}>
-			{children}
-		</BookCtx.Provider>
-	)
-}
+  return (
+    <BookCtx.Provider value={{ BookList: list, ListChange: dispatch }}>
+      {children}
+    </BookCtx.Provider>
+  );
+};

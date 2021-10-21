@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Legal = () => {
-	return (
-		<div>
-			
-		</div>
-	)
-}
+  return <div></div>;
+};
 
-export default Legal
+export default Legal;
